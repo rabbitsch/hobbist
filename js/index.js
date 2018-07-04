@@ -2,13 +2,12 @@ const youtubeApi= 'AIzaSyDdUGDSs5Dp-Z4ZtRGyKv8IenmvXxfV-wI'
 
 const endPointYou = 'https://www.googleapis.com/youtube/v3/search'
 
-const shoppingApi = '92d3xtd3zfkxhac2d9cuty2b'
+// const shoppingApi = '92d3xtd3zfkxhac2d9cuty2b'
 
-const endPointShop = 'http://api.walmartlabs.com/v1/search?query=ipod&format=json&apiKey=92d3xtd3zfkxhac2d9cuty2b'
 
 // const urlshop = `http://api.walmartlabs.com/v1/search?query=${query}&format=json&apiKey=92d3xtd3zfkxhac2d9cuty2b`
 
-const endPointWiki ='https://en.wikipedia.org/w/api.php' 
+const endPointWiki ='https://en.wikipedia.org/w/api.php'
 
 
 
@@ -20,7 +19,7 @@ $("form").submit('submit',function(event){
   let queryTarget= $(event.currentTarget).find('#js-query');
   let findings = queryTarget.val();
   let final = "learn how to" + findings
-  getShoppingData(findings);
+  getBookData(findings);
   getWikiData(findings);
   getYoutubeData(final);
 
@@ -29,22 +28,24 @@ $("form").submit('submit',function(event){
 })
 
 
-//retrieve shopping Data
-function getShoppingData(searchTerms1){
-  // url = 'http://api.walmartlabs.com/v1/search?query=${objShopFunct.query}&format=json&apiKey=${objShopFunct.apiKey}';
-  let objShopFunct ={
-    apiKey: shoppingApi,
+//retrieve Book Data
+function getBookData(searchTerms1){
+
+  let objBookFunct ={
     format: JSON,
     maxResults: 3,
     query: searchTerms1
 
   }
-  url = `https://api.walmartlabs.com/v1/search?query=${objShopFunct.query}&format=json&apiKey=92d3xtd3zfkxhac2d9cuty2b`
-  // let urlshop = `http://api.walmartlabs.com/v1/search?query=${objShopFunct.query}&format=json&apiKey=92d3xtd3zfkxhac2d9cuty2b`
-    console.log('shop api')
-    $.getJSON(url,objShopFunct,function(data){
+  url = `https://openlibrary.org/search.json?q=${objBookFunct.query}`
+
+    console.log('book api')
+    $.getJSON(url,function(data){
     console.log('how about now api')
-    console.log(data)
+    //  console.log(data.docs[0].title_suggest)
+    //  console.log(data.docs)
+     renderBookData(data);
+
   })
 
 }
@@ -79,8 +80,12 @@ function getWikiData(searchTerm2){
   }
   console.log('wiki you there')
   $.getJSON(url,objWikiFunct, function(data){
-    console.log('wiki api do you exist')
-    console.log(data)
+    // console.log('wiki api do you exist')
+    // console.log(data[2][1])
+    // console.log(data[2][2])
+    // console.log(data[2][3])
+    // console.log(data)
+    renderWikiData(data);
   })
 
 }
@@ -89,6 +94,21 @@ function getWikiData(searchTerm2){
 //retrieve Map Data (optional)
 function getMapData(){
 
+
+}
+
+
+//Render and display Book Data
+function renderBookData(results){
+   results.forEach(function(value){
+    console.log('can you hear me render book')
+    console.log(results.docs[0].title_suggest)
+    let html =
+      `<li>
+        <h1 ${results.docs[0].title_suggest}</h1>`
+        $("#bookcontent").append(html);
+
+  })
 
 }
 
@@ -113,6 +133,10 @@ function renderTubeData(results){
 //Render and Display WikiData
 function renderWikiData(results){
   results.forEach(function(value){
+    let html =
+      `<h1>${results[1][0]}</h2>
+        <p>${results[2][1]}</p>`
+    $("#wikicontent").append(html);
 
   })
 
