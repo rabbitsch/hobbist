@@ -1,0 +1,124 @@
+
+*{
+font-family: 'Archivo Narrow', sans-serif;
+box-sizing: border-box;
+}
+
+
+#title{
+  font-family: 'Permanent Marker', serif;
+	font-size: 80px;
+	letter-spacing: 4px;
+  background-image: url('https://s3-us-west-1.amazonaws.com/schmitzbucket/Elephant-Stamp-2015033134.png');
+  background-size: 200px 200px;
+  background-repeat: no-repeat;
+  background-position: right 20px;
+  
+	/* border: 3px solid whitesmoke; */
+  
+  color: black;
+	width: 245px;
+	margin-top: 32px;
+	padding-top: 7px;
+	padding-left: 5px;
+	top: 255px;
+	left: 40%;
+  /* transition: color 0.25s linear; */
+	
+}
+
+#front{
+  font-size: 20px;
+  text-align: center;
+  color:forestgreen;
+  /* text-shadow: 5px 5px 5px lightgreen; */
+  
+}
+
+#daform{
+  text-align: center;
+}
+
+input {
+  border: none;
+  border-bottom: 3px solid ghostwhite;
+  border-radius: 0px;
+  padding: 8px 0;
+  color: darkblue;
+  -webkit-font-smoothing: antialiased;
+  font-size: 45px;
+  background: none;
+  /* width: 690px; */
+  
+}
+
+button {
+  border: 3px solid forestgreen;
+  padding: 8px 13px;
+  color: ghostwhite;
+  font-size: 45px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  transition: color 0.25s linear;
+  text-shadow: 0 0 3px #555555;
+  position: relative;
+  left: -3px;
+  border-radius: 0;
+}
+
+button:hover{
+  background: darkblue;
+}
+
+body{
+  background:url('https://s3-us-west-1.amazonaws.com/schmitzbucket/pexels-photo-672358.jpeg')fixed no-repeat;
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+
+.youtube{
+  list-style-type: none;
+  border-style: 3px solid white;
+  background: rgba(255, 255, 255, 0.60);
+  transition: color 0.25s linear;
+  /* text-shadow: 0 0 3px #555555; */
+   box-shadow: 1px 1px 5px #777777;
+}
+
+#tubetitle{
+  width: 100%;
+  text-shadow: 5px 5px 5px black;
+  color: white;
+}
+
+#wikicontent{
+  background: rgba(255, 255, 255,.60);
+  transition: color 0.25s linear;
+  box-shadow: 1px 1px 5px #777777;
+  margin-bottom: 20px;
+}
+.wikiTitle{
+  text-shadow: 5px 5px 5px black;
+  color: white;
+}
+
+#bookcontent{
+   list-style-type: none;
+  border-style: 3px solid white;
+  background: rgba(255, 255, 255, 0.60);
+  transition: color 0.25s linear;
+   box-shadow: 1px 1px 5px #777777;
+}
+
+#booktitle{
+  text-shadow: 5px 5px 5px black;
+  color: white;
+
+}
+
+.book-cls{
+  text-align: center;
+}
