@@ -12,18 +12,17 @@ box-sizing: border-box;
   background-size: 200px 200px;
   background-repeat: no-repeat;
   background-position: right 20px;
-  
+
 	/* border: 3px solid whitesmoke; */
-  
+
   color: black;
-	width: 245px;
 	margin-top: 32px;
 	padding-top: 7px;
 	padding-left: 5px;
 	top: 255px;
 	left: 40%;
   /* transition: color 0.25s linear; */
-	
+
 }
 
 #front{
@@ -31,7 +30,7 @@ box-sizing: border-box;
   text-align: center;
   color:forestgreen;
   text-shadow: 5px 5px 5px lightgreen;
-  
+
 }
 
 #daform{
@@ -47,8 +46,7 @@ input {
   -webkit-font-smoothing: antialiased;
   font-size: 45px;
   background: none;
-  width: 690px;
-  
+  width: 100%;
 }
 
 button {

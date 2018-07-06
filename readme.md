@@ -18,8 +18,8 @@ The Hobbist is a web application that helps you start a new hobby. Just enter a 
 
 **Design**
 
-- [ ] Setup a responsive design structure (typography, grid system)
-  - [ ] Implement a responsive grid system
+- [x] Setup a responsive design structure (typography, grid system)
+  - [x] Implement a responsive grid system
 - [ ] Implement basic UI components
     - [ ] Form controls (text input, button)
     - [ ] Card
