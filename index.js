@@ -20,13 +20,18 @@ $("form").submit('submit',function(event){
   let findings = queryTarget.val();
   let final = "teach me " + findings
   
+  queryTarget.val(" ");
+ 
+
+
  
   getWikiData(findings);
   getYoutubeData(final);
   getGoogleBookData(findings);
   // ajaxTestWiki(findings);
+   })
 
-})
+
 // console.log('click submit baby')
 })
 
@@ -40,7 +45,7 @@ function getYoutubeData(searchTerms){
       part: "snippet",
       type: "video",
       q: searchTerms,
-      maxResults: 3,
+      maxResults: 5,
       order: "viewCount",
      key: youtubeApi,
      url:endPointYou,
@@ -82,7 +87,7 @@ function ajaxTestWiki(search1){
     dataType: "json",
     url:`https://en.wikipedia.org/w/api.php?action=opensearch&search=${search1}&format=json&callback=?`,
     success: function(data){
-      console.log(data[0])
+      // console.log(data[0])
     },
     type: "GET"
   })
@@ -102,7 +107,7 @@ function getWikiData(searchTerm2){
   }
   console.log('wiki you there')
   $.getJSON(url,objWikiFunct, function(data){
-   
+   $("#wikicontent").html(" ");
     // console.log('wiki api do you exist')
 
     // console.log(data[1][0])
@@ -127,8 +132,11 @@ function getMapData(){
 }
 
 function renderGoogleBookData(results){
+  $(".bookcls").html("");
+  $(".bookcls").html(`<h1 class="conHead">Books</h1>`);
   results.forEach(function(value){
     //  console.log(value)
+    
      let html = `
       <li class="book-cls">
         <h1 id="booktitle">${value.volumeInfo.title}</h1>
@@ -138,8 +146,12 @@ function renderGoogleBookData(results){
         <a href="${value.selfLink}" target="_blank"> See Book Here</a>
       </li>
     `
-    $("#bookcontent").append(html);
+
+    $(".bookcls").append(html);
+    // $(".bookcls").fadeIn(html);
+
   })
+  
   
 
 }
@@ -149,19 +161,24 @@ function renderGoogleBookData(results){
 
 //Render and Display Youtube Data
 function renderTubeData(results){
-  $(".youtube").append(" ");
+ 
+  
+  $(".youtube").html(" ");
+  $(".youtube").html(`<h1 class="conHead">Videos</h1>`);
   results.forEach(function(value){
     //  console.log(value)
     let html = `
       <li class="youtube-cls">
         <h1 id="tubetitle">${value.snippet.title}</h1>
         <a href="https://youtube.com/watch?v=${value.id.videoId}" target="_blank">
-          <img src ="${value.snippet.thumbnails.medium.url}">
+          <img src ="${value.snippet.thumbnails.medium.url}" class="imgtube">
         </a>
         <p>${value.snippet.description}</p>
       </li>
     `
+    // $(".youtube").html("<h1>Videos</h1>");
     $(".youtube").append(html);
+     
 }
 )}
 
@@ -174,6 +191,7 @@ function renderWikiData(results){
       `<h1>${value}</h2>`
         // <p>${value}</p>`
     $("#wikicontent").append(html);
+    
 
       }
 // results[2].forEach(function(newValue){

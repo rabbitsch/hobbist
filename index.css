@@ -4,19 +4,26 @@ font-family: 'Archivo Narrow', sans-serif;
 box-sizing: border-box;
 }
 
+html{
+  width:100%;
+  text-align: center;
+ 
+
+}
 
 #title{
   font-family: 'Permanent Marker', serif;
-	font-size: 80px;
+	font-size: 8vw;
 	letter-spacing: 4px;
   background-image: url('https://s3-us-west-1.amazonaws.com/schmitzbucket/Elephant-Stamp-2015033134.png');
   background-size: 200px 200px;
   background-repeat: no-repeat;
+  
   background-position: right 20px;
   
 	/* border: 3px solid whitesmoke; */
   
-  color: black;
+  color: forestgreen;
 	width: 245px;
 	margin-top: 32px;
 	padding-top: 7px;
@@ -28,11 +35,16 @@ box-sizing: border-box;
 }
 
 #front{
+
   font-size: 20px;
   text-align: center;
-  color:forestgreen;
-  /* text-shadow: 5px 5px 5px lightgreen; */
-  
+  color:black;
+  text-shadow: 5px 5px 5px whitesmoke;
+  /* background: rgba(255, 255, 255,.60);
+  transition: color 0.25s linear; */
+  border-radius: 2%;
+  /* box-shadow: 1px 1px 5px #777777; */
+ 
 }
 
 #daform{
@@ -43,8 +55,8 @@ input {
   border: none;
   border-bottom: 3px solid ghostwhite;
   border-radius: 0px;
-  padding: 8px 0;
-  color: darkblue;
+  /* padding: 8px 0; */
+  color: white;
   -webkit-font-smoothing: antialiased;
   font-size: 45px;
   background: none;
@@ -63,7 +75,7 @@ button {
   transition: color 0.25s linear;
   text-shadow: 0 0 3px #555555;
   position: relative;
-  left: -3px;
+  /* left: -3px; */
   border-radius: 0;
 }
 
@@ -72,10 +84,14 @@ button:hover{
 }
 
 body{
+  
   background:url('https://s3-us-west-1.amazonaws.com/schmitzbucket/pexels-photo-672358.jpeg')fixed no-repeat;
-   -webkit-background-size: cover;
+  background-position: center center;
+  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  background-size: cover;
+  
 }
 
 
@@ -86,6 +102,10 @@ body{
   transition: color 0.25s linear;
   /* text-shadow: 0 0 3px #555555; */
    box-shadow: 1px 1px 5px #777777;
+}
+
+.imgtube{
+  width:90%;
 }
 
 #tubetitle{
@@ -105,7 +125,7 @@ body{
   color: white;
 }
 
-#bookcontent{
+.bookcls{
    list-style-type: none;
   border-style: 3px solid white;
   background: rgba(255, 255, 255, 0.60);
@@ -121,4 +141,9 @@ body{
 
 .book-cls{
   text-align: center;
+}
+
+.conHead{
+  font-size: 35px;
+  font-family: 'Permanent Marker', serif;
 }
